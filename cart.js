@@ -52,6 +52,8 @@ decrease.forEach((button, index) => {
   });
 });
 
+
+
 // ORDER SUMMARY
 function calculateTotal() {
   let subtotal = 0;
