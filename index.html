@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>NovaStore | Products</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- =========================
+         HEADER / NAVBAR
+    ========================== -->
+
+    <header class="header">
+      <nav class="navbar">
+        <a href="#" class="logo"> Nova<span>Store</span> </a>
+
+        <div class="nav-links">
+          <a href="#" class="active">Home</a>
+
+          <a href="#products">Products</a>
+
+          <a href="#top-sellers">Top Sellers</a>
+
+          <a href="#">About</a>
+        </div>
+
+        <div class="nav-actions">
+          <!-- Search -->
+
+          <div class="nav-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search products..."
+            />
+          </div>
+
+          <!-- Profile -->
+
+          <button class="profile-btn">
+            <div class="profile-avatar">
+              <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="profile-info">
+              <span>Hello</span>
+              <strong>My Account</strong>
+            </div>
+
+            <i class="fa-solid fa-chevron-down profile-arrow"></i>
+          </button>
+
+          <!-- Cart -->
+          
+          <a href="./cart.html">
+            <button class="cart-btn">
+              <i class="fa-solid fa-bag-shopping"></i>
+
+              <span>Cart</span>
+
+              <span class="cart-count">0</span>
+            </button>
+          </a>
+        
+        </div>
+      </nav>
+    </header>
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+      <!-- =========================
+             HERO
+        ========================== -->
+
+      <section class="hero">
+        <div class="hero-content">
+          <div class="hero-text">
+            <span class="hero-label"> NEW TECH COLLECTION </span>
+
+            <h1>
+              Upgrade Your
+              <span>Digital Lifestyle.</span>
+            </h1>
+
+            <p>
+              Discover premium laptops, smartphones, accessories and everyday
+              technology made for work, creativity and entertainment.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#products" class="primary-btn">
+                Shop Products
+
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+              <a href="#top-sellers" class="secondary-btn">
+                View Top Sellers
+              </a>
+            </div>
+
+            <div class="hero-stats">
+              <div>
+                <strong>100+</strong>
+                <span>Products</span>
+              </div>
+
+              <div>
+                <strong>10K+</strong>
+                <span>Customers</span>
+              </div>
+
+              <div>
+                <strong>4.9</strong>
+                <span>Customer Rating</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-image-box">
+              <img
+                src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853"
+                alt="Laptop"
+              />
+            </div>
+
+            <div class="floating-card">
+              <div class="floating-icon">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+
+              <div>
+                <strong>Fast Delivery</strong>
+                <span>Nationwide shipping</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+             PRODUCT SECTION
+        ========================== -->
+
+      <section class="products-section" id="products">
+        <!-- Section Heading -->
+
+        <div class="section-header">
+          <div>
+            <span class="section-label"> EXPLORE OUR STORE </span>
+
+            <h2>Featured Products</h2>
+
+            <p>Discover some of our latest products selected for you.</p>
+          </div>
+
+          <div class="products-result">
+            <span class="product-count"> 0 Products </span>
+          </div>
+        </div>
+
+        <!-- ===========================
+                 FILTER / PRODUCT TOOLBAR
+            ========================== -->
+
+        <div class="product-toolbar">
+          <!-- FILTER BUTTONS -->
+
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-category="all">
+              All Products
+            </button>
+
+            <button class="filter-btn" data-category="laptop">Laptop</button>
+
+            <button class="filter-btn" data-category="phone">Phone</button>
+
+            <button class="filter-btn" data-category="accessories">
+              Accessories
+            </button>
+
+            <button class="filter-btn" data-category="wearables">
+              Wearables
+            </button>
+
+            <button class="filter-btn" data-category="camera">Camera</button>
+          </div>
+
+          <!-- SORT -->
+
+          <div class="sort-container">
+            <label for="sortProducts"> Sort by: </label>
+
+            <select id="sortProducts" class="sort-select">
+              <option value="default">Featured</option>
+
+              <option value="low-high">Price: Low to High</option>
+
+              <option value="high-low">Price: High to Low</option>
+
+              <option value="name">Name: A - Z</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- =========================
+                 PRODUCTS GENERATED BY JS
+            ========================== -->
+
+        <div class="products-container"></div>
+
+        <!-- Empty State -->
+
+        <div class="empty-products">
+          <i class="fa-solid fa-box-open"></i>
+
+          <h3>No Products Found</h3>
+
+          <p>We couldn't find products matching your selection.</p>
+        </div>
+      </section>
+
+      <!-- =========================
+             TOP SELLERS
+        ========================== -->
+
+      <section class="top-sellers-section" id="top-sellers">
+        <div class="section-header">
+          <div>
+            <span class="section-label"> CUSTOMER FAVORITES </span>
+
+            <h2>Top Sellers</h2>
+
+            <p>Explore some of our most popular products.</p>
+          </div>
+
+          <a href="#products" class="view-all">
+            View All Products
+
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Generated with JavaScript -->
+
+        <div class="top-sellers-container">
+          <!-- TOP SELLER 1 -->
+          <div class="product-card">
+            <div class="product-image-container">
+              <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab"
+                alt="iPhone 15 Pro"
+              />
+
+              <span class="product-badge"> #1 Seller </span>
+
+              <button class="wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="product-content">
+              <span class="product-category"> Phone </span>
+
+              <h3 class="product-name">iPhone 15 Pro</h3>
+
+              <p class="product-description">
+                One of our most popular premium smartphones.
+              </p>
+
+              <div class="product-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+
+                <span>4.9 (214)</span>
+              </div>
+
+              <div class="product-bottom">
+                <span class="product-price"> ₦1,200,000 </span>
+
+                <button class="add-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- TOP SELLER 2 -->
+          <div class="product-card">
+            <div class="product-image-container">
+              <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e"
+                alt="Wireless Headphones"
+              />
+
+              <span class="product-badge"> Best Seller </span>
+
+              <button class="wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="product-content">
+              <span class="product-category"> Accessories </span>
+
+              <h3 class="product-name">Wireless Headphones</h3>
+
+              <p class="product-description">
+                Rich sound, wireless freedom and comfortable everyday listening.
+              </p>
+
+              <div class="product-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+
+                <span>4.8 (186)</span>
+              </div>
+
+              <div class="product-bottom">
+                <span class="product-price"> ₦85,000 </span>
+
+                <button class="add-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- TOP SELLER 3 -->
+          <div class="product-card">
+            <div class="product-image-container">
+              <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
+                alt="MacBook Pro"
+              />
+
+              <span class="product-badge"> Popular </span>
+
+              <button class="wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="product-content">
+              <span class="product-category"> Laptop </span>
+
+              <h3 class="product-name">MacBook Pro M3</h3>
+
+              <p class="product-description">
+                Powerful performance for developers and creative professionals.
+              </p>
+
+              <div class="product-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+
+                <span>4.9 (165)</span>
+              </div>
+
+              <div class="product-bottom">
+                <span class="product-price"> ₦1,500,000 </span>
+
+                <button class="add-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- TOP SELLER 4 -->
+          <div class="product-card">
+            <div class="product-image-container">
+              <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
+                alt="Smart Watch"
+              />
+
+              <span class="product-badge"> Trending </span>
+
+              <button class="wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+
+            <div class="product-content">
+              <span class="product-category"> Wearables </span>
+
+              <h3 class="product-name">Smart Watch Series 9</h3>
+
+              <p class="product-description">
+                Fitness, notifications and everyday essentials right on your
+                wrist.
+              </p>
+
+              <div class="product-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+
+                <span>4.7 (143)</span>
+              </div>
+
+              <div class="product-bottom">
+                <span class="product-price"> ₦120,000 </span>
+
+                <button class="add-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+             NEWSLETTER
+        ========================== -->
+
+      <section class="newsletter">
+        <div class="newsletter-content">
+          <div>
+            <span>STAY UPDATED</span>
+
+            <h2>Get offers delivered to your inbox.</h2>
+
+            <p>
+              Subscribe to receive product updates, discounts and special
+              offers.
+            </p>
+          </div>
+
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email address" />
+
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================
+         CART DRAWER
+         We'll make this work later
+         with Event Listeners
+    ========================== -->
+
+    <div class="cart-overlay"></div>
+
+    <aside class="cart-drawer">
+      <div class="cart-header">
+        <div>
+          <h2>Your Cart</h2>
+          <p class="cart-items-count">0 items</p>
+        </div>
+
+        <button class="close-cart">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="cart-items">
+        <!--
+                JavaScript will generate
+                cart items here
+            -->
+      </div>
+
+      <div class="empty-cart">
+        <div class="empty-cart-icon">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+
+        <h3>Your cart is empty</h3>
+
+        <p>Add some products to your cart and they will appear here.</p>
+      </div>
+
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong class="cart-subtotal"> ₦0 </strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Delivery</span>
+          <strong> Calculated at checkout </strong>
+        </div>
+
+        <div class="summary-total">
+          <span>Total</span>
+
+          <strong class="cart-total"> ₦0 </strong>
+        </div>
+
+        <button class="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </aside>
+
+    <!-- =========================
+         PROFILE DROPDOWN
+    ========================== -->
+
+    <div class="profile-dropdown">
+      <div class="dropdown-user">
+        <div class="dropdown-avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+
+        <div>
+          <strong>John Doe</strong>
+          <span>john@example.com</span>
+        </div>
+      </div>
+
+      <div class="dropdown-links">
+        <a href="#">
+          <i class="fa-regular fa-user"></i>
+          My Profile
+        </a>
+
+        <a href="#">
+          <i class="fa-solid fa-box"></i>
+          My Orders
+        </a>
+
+        <a href="#">
+          <i class="fa-regular fa-heart"></i>
+          Wishlist
+        </a>
+
+        <a href="#">
+          <i class="fa-solid fa-gear"></i>
+          Settings
+        </a>
+      </div>
+    </div>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#" class="logo"> Nova<span>Store</span> </a>
+
+          <p>Quality technology for work, creativity and everyday life.</p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Shop</h3>
+
+          <a href="#products">Products</a>
+          <a href="#top-sellers">Top Sellers</a>
+          <a href="#">New Arrivals</a>
+        </div>
+
+        <div class="footer-links">
+          <h3>Company</h3>
+
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Careers</a>
+        </div>
+
+        <div class="footer-links">
+          <h3>Support</h3>
+
+          <a href="#">Help Center</a>
+          <a href="#">Delivery</a>
+          <a href="#">Returns</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 NovaStore. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript later -->
+    <script src="moses.js"></script>
+  </body>
+</html>
